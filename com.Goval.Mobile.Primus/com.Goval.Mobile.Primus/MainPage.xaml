@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:com.Goval.Mobile.Primus"
+             x:Class="com.Goval.Mobile.Primus.MainPage">
+    <StackLayout Orientation="Vertical">
+        <Label Text="Welcome to Xamarin Forms!" 
+               VerticalOptions="Fill" 
+               HorizontalOptions="Center" />
+        <Button HorizontalOptions="Center" VerticalOptions="Fill" Text="Add new" Clicked="Button_Clicked"/>
+        <Editor x:Name="Lista" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" />
+    </StackLayout>
+</ContentPage>

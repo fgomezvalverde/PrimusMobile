@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+		     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="com.Goval.Mobile.Primus.Pages.CategoriesPage">
+    <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnCount="2"
+			FlowItemTappedCommand="{Binding SelectedCategory}"
+			FlowColumnMinWidth="110" FlowItemsSource="{Binding CATEGORIES}">
+
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <Grid Padding="3">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ffimageloading:CachedImage HeightRequest="200" Aspect="AspectFill"
+							Source="{Binding Media_Path}"/>
+                </Grid>
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+
+    </flv:FlowListView>
+</ContentPage>
