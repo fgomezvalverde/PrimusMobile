@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace com.Goval.Mobile.Primus.Pages
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CategoriesPage : ContentPage
     {
         public CategoriesPage()

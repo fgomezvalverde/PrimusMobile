@@ -6,7 +6,6 @@ using System.Text;
 using com.Goval.Mobile.Primus.PageModels;
 using Xamarin.Forms;
 using com.Goval.Mobile.Primus.TESTTING;
-using com.Goval.Mobile.Primus.GlobalResources;
 
 namespace com.Goval.Mobile.Primus
 {
