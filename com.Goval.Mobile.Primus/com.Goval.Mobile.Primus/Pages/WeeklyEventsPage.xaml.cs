@@ -1,4 +1,5 @@
-﻿using System;
+﻿using com.Goval.Mobile.Primus.PageModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace com.Goval.Mobile.Primus.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeeklyEventsPage : ContentPage
     {
         public WeeklyEventsPage()

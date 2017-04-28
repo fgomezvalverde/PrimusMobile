@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin;
+using FFImageLoading.Forms.Touch;
 
 namespace com.Goval.Mobile.Primus.iOS
 {
@@ -23,6 +25,7 @@ namespace com.Goval.Mobile.Primus.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            FormsMaps.Init();
             CachedImageRenderer.Init();
             LoadApplication(new App());
 

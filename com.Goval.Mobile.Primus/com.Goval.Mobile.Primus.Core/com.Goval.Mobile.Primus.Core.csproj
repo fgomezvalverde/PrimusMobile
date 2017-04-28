@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Amazon\AmazonConstants.cs" />
     <Compile Include="Amazon\DynamoDBManager.cs" />
+    <Compile Include="DependecyServices\IPlatformVIsualElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

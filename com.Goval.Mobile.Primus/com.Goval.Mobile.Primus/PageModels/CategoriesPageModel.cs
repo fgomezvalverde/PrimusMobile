@@ -15,12 +15,12 @@ namespace com.Goval.Mobile.Primus.PageModels
     [ImplementPropertyChanged]
     public class CategoriesPageModel : FreshBasePageModel
     {
-        public ObservableCollection<Category> CATEGORIES { get; set; }
+        public ObservableCollection<Category> Categories { get; set; }
 
         public async override void Init(object initData)
         {
             var categoryList = await DynamoDBManager.GetInstance().GetItemsAsync<Category>();
-            CATEGORIES = new ObservableCollection<Category>(categoryList);
+            Categories = new ObservableCollection<Category>(categoryList);
         }
 
         public Command<Category> SelectedCategory

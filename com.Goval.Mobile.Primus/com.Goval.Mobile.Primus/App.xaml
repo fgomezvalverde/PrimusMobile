@@ -4,14 +4,59 @@
              x:Class="com.Goval.Mobile.Primus.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="MainBackgroundColor">Black</Color>
-            <Color x:Key="MainColorTextColor">White</Color>
-
-            <Style x:Key="labelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource MainBackgroundColor}" />
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
             </Style>
-            <Style x:Key="backgroundStyle" TargetType="VisualElement">
-                <Setter Property="BackgroundColor" Value="{DynamicResource MainColorTextColor}" />
+            <Style TargetType="VisualElement">
+                <Setter Property="BackgroundColor" Value="Black" />
+            </Style>
+
+
+            <OnPlatform x:TypeArguments="Color" Android="#00e366" iOS="#00e366" WinPhone="#00e366" x:Key="PostDetailCalificationBoxBackgroundColor"/>
+            <OnPlatform x:TypeArguments="Color" Android="#dedcde" iOS="#dedcde" WinPhone="#dedcde" x:Key="PostDetailBackgroundColor"/>
+
+            <OnPlatform x:TypeArguments="Color" Android="#dedcde" iOS="#dedcde" WinPhone="#dedcde" x:Key="PostDetailHeaderDividerColor"/>
+
+
+            
+            
+            
+            <OnPlatform x:TypeArguments="x:Double" Android="0.5" iOS="0.5" WinPhone="0.5" x:Key="DividerHeigthSize" />
+            <OnPlatform x:TypeArguments="x:Double" Android="12" iOS="12" WinPhone="12" x:Key="SpacingBetweenComponents" />
+
+
+            <OnPlatform x:TypeArguments="Thickness" Android="0,-25,0,0" iOS="0,-25,0,0" WinPhone="0,-25,0,0" x:Key="PostDetailCardBoxMargin"/>
+            <OnPlatform x:TypeArguments="Thickness" Android="15" iOS="15" WinPhone="15" x:Key="NormalCardMargin"/>
+
+
+            <Style x:Key="PostDetailHeaderTitleStyle" TargetType="Label" >
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="PostDetailHeaderUbicationStyle" TargetType="Label" >
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="TextColor" Value="{DynamicResource PostDetailBackgroundColor}"/>
+            </Style>
+
+            <Style x:Key="PostDetailCalificationBoxStyle" TargetType="Label" >
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="PostDetailHeaderDetailStyle" TargetType="Label" >
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="PostDetailInformationSubTitleStyle" TargetType="Label" >
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+
+            <Style x:Key="HyperLinkLabelStyle" TargetType="Label" >
+                <Setter Property="TextColor" Value="#0645AD"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

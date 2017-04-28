@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using com.Goval.Mobile.Primus.Core.Amazon;
 using com.Goval.Mobile.Primus.Model;
+using com.Goval.Mobile.Primus.Core.DependecyServices;
 
 namespace com.Goval.Mobile.Primus
 {
@@ -16,23 +17,18 @@ namespace com.Goval.Mobile.Primus
         {
             InitializeComponent();
         }
-
-        private async void Button_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            //DependencyService.Get<IPlatformVIsualElements>().HideStatusBar();
+        }
+        private async void Button_ClickedModalNav(object sender, EventArgs e)
         {
             try
             {
-                Post obj = new Post
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = cont + ""
-                };
-                cont++;
-                var name = DynamoDBManager.GetInstance();
-                await DynamoDBManager.GetInstance().SaveAsync<Post>(obj);
-                var lista = await DynamoDBManager.GetInstance().GetItemsAsync<Post>();
-
-                Editor editor = this.FindByName<Editor>("Lista");
-                editor.Text = lista.Count + "";
+                await Navigation.PushModalAsync(
+                    new NavigationPage(new MainPage())
+                    );
             }
             catch (Exception)
             {
@@ -40,6 +36,52 @@ namespace com.Goval.Mobile.Primus
                 throw ;
             }
             
+        }
+        private async void Button_Clicked_PushNav(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(
+                    new NavigationPage(new MainPage())
+                    );
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        private async void Button_Clicked_ModalNormal(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushModalAsync(
+                   new MainPage()
+                    );
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private async void Button_Clicked_Normal(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(
+                   new MainPage()
+                    );
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

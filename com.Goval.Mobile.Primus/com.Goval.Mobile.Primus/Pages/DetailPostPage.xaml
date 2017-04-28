@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="com.Goval.Mobile.Primus.Pages.DetailPostPage"
+             xmlns:parallax="clr-namespace:DevsDNA.XFParallax;assembly=DevsDNA.XFParallax"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:localContentViews ="clr-namespace:com.Goval.Mobile.Primus.Controls.ContentViews;assembly=com.Goval.Mobile.Primus"
+             Title="DetailPostPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="toolbar_share.png" Text="Share" Command="{Binding ShareCommand}"/>
+    </ContentPage.ToolbarItems>
+    <parallax:ParallaxView x:Name="MainParallax" BodyMargin="0,250,0,0" HeaderScrollSpeed="4">
+        <parallax:ParallaxView.HeaderContent>
+            <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout >
+                    <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" VerticalOptions="FillAndExpand"
+                                Source="{Binding SelectedPost.Media_Path}" ></ffimageloading:CachedImage>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                </StackLayout>
+            </ContentView>
+        </parallax:ParallaxView.HeaderContent>
+        <parallax:ParallaxView.BodyContent>
+            <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="1300">
+                <ContentView.Margin>
+                </ContentView.Margin>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource PostDetailBackgroundColor}" Spacing="{DynamicResource SpacingBetweenComponents}">
+                    <localContentViews:DetailPostHeader/>
+                    <localContentViews:DetailPostInformation/>
+
+                    
+
+                </StackLayout>
+
+            </ContentView>
+            
+        </parallax:ParallaxView.BodyContent>
+    </parallax:ParallaxView>
+</ContentPage>

@@ -31,5 +31,8 @@ namespace com.Goval.Mobile.Primus.Model
         [DynamoDBProperty]
         public DateTime Date { get; set; }
 
+        [DynamoDBProperty]
+        public Boolean IsFavorite { get; set; }
+
     }
 }

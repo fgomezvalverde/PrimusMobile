@@ -6,14 +6,19 @@ using System.Text;
 using com.Goval.Mobile.Primus.PageModels;
 using Xamarin.Forms;
 using com.Goval.Mobile.Primus.TESTTING;
+using com.Goval.Mobile.Primus.GlobalResources;
 
 namespace com.Goval.Mobile.Primus
 {
     public partial class App : Application
-    {
+    { public static string Name= "WTF";
         public App()
         {
             InitializeComponent();
+            /*TabbedPage tabPage = new TabbedPage();
+            tabPage.Children.Add(new MainPage { Title="uno"});
+            tabPage.Children.Add(new MainPage { Title = "dos" });
+            MainPage = tabPage;*/
             //DataInitiliazerTest.AddCategoriesObjects();
             LoadTabbedNav();
             //MainPage = new MainPage();

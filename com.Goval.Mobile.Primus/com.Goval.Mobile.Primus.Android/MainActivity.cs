@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using FFImageLoading.Forms.Droid;
+using Xamarin.Forms;
+using Xamarin;
 
 namespace com.Goval.Mobile.Primus.Droid
 {
@@ -18,12 +20,16 @@ namespace com.Goval.Mobile.Primus.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+
             base.OnCreate(bundle);
 
            
             global::Xamarin.Forms.Forms.Init(this, bundle);
             CachedImageRenderer.Init();
+            FormsMaps.Init(this, bundle);
             LoadApplication(new App());
+
+
         }
     }
 }

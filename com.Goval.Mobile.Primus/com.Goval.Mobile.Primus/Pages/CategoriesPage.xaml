@@ -6,7 +6,7 @@
              x:Class="com.Goval.Mobile.Primus.Pages.CategoriesPage">
     <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnCount="2"
 			FlowItemTappedCommand="{Binding SelectedCategory}"
-			FlowColumnMinWidth="110" FlowItemsSource="{Binding CATEGORIES}">
+			FlowColumnMinWidth="110" FlowItemsSource="{Binding Categories}">
 
         <flv:FlowListView.FlowColumnTemplate>
             <DataTemplate>

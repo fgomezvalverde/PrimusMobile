@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:localResources="clr-namespace:com.Goval.Mobile.Primus.AppResources"
+    x:Class="com.Goval.Mobile.Primus.Controls.ContentViews.DetailPostInformation">
+  <ContentView.Content>
+        <Grid BackgroundColor="White" Padding="{DynamicResource NormalCardMargin}"  RowSpacing="8" ColumnSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <StackLayout >
+                <StackLayout Grid.Row="0" Grid.Column="0" Spacing="0">
+                    <Label Text="{x:Static localResources:AppResources.PhoneNumberLabel}"  Style="{DynamicResource PostDetailInformationSubTitleStyle}"/>
+                    <Label Text="2258-9578"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0"  Spacing="0">
+                    <Label Text="{x:Static localResources:AppResources.PlaceTypeLabel}" Style="{DynamicResource PostDetailInformationSubTitleStyle}"/>
+                    <Label Text="Comida Italiana"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0"  Spacing="0">
+                    <Label Text="{x:Static localResources:AppResources.AverageCostLabel}" Style="{DynamicResource PostDetailInformationSubTitleStyle}"/>
+                    <Label Text="$$$" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="0"  Spacing="0">
+                    <Label Text="{x:Static localResources:AppResources.WebSiteLabel}" Style="{DynamicResource PostDetailInformationSubTitleStyle}"/>
+                    <Label Text="http://www.lavuelta.com" Style="{DynamicResource HyperLinkLabelStyle}" FontSize="Micro">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LinkClicked}" CommandParameter="http://www.lavuelta.com"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="0" Grid.Column="1"  Spacing="0">
+                <Label Text="{x:Static localResources:AppResources.EntryScheduleLabel}" Style="{DynamicResource PostDetailInformationSubTitleStyle}"/>
+
+
+                <!-- 
+                    THIS IS A FOR NOW, BUT IT SUPPOSED TO BE A LIST
+                    -->
+                <Label Text="Lunes 18:00-22:00" />
+                <Label Text="Martes 18:00-22:00" />
+                <Label Text="Miercoles 18:00-22:00" />
+                <Label Text="Jueves 18:00-22:00" />
+                <Label Text="Viernes 18:00-22:00" />
+                <Label Text="Sabado Cerrado" TextColor="Red" />
+                <Label Text="Domingo 12:00-23:00" />
+            </StackLayout>
+
+
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:com.Goval.Mobile.Primus.Controls" 
+             xmlns:localConverter="clr-namespace:com.Goval.Mobile.Primus.Converters"
+             x:Class="com.Goval.Mobile.Primus.Controls.ContentViews.DetailPostHeader">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <localConverter:IsFilledIconConverter x:Key="IsFilledIconConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content VerticalOptions="FillAndExpand" >
+        <Grid BackgroundColor="White" Padding="0,0,0,20"  RowSpacing="8" ColumnSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <BoxView 
+                BackgroundColor="{DynamicResource PostDetailCalificationBoxBackgroundColor}" 
+                HeightRequest="50" 
+                WidthRequest="70"  
+                Margin="{DynamicResource PostDetailCardBoxMargin}" 
+                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                Grid.Row="0" Grid.Column="1" />
+            <Label 
+                Text="4.0" 
+                XAlign="Center" YAlign="Center" 
+                HorizontalOptions="Center"  
+                Grid.Row="0" Grid.Column="1" 
+                Style="{DynamicResource PostDetailCalificationBoxStyle}"
+                Margin="{DynamicResource PostDetailCardBoxMargin}"/>
+            <StackLayout Grid.Row="1" Grid.Column="1" Spacing="0">
+                <Label 
+                    Text="Pizzeria La Vuelta" 
+                       VerticalOptions="CenterAndExpand" 
+                       XAlign="Center" YAlign="End" 
+                       Style="{DynamicResource PostDetailHeaderTitleStyle}" />
+                <Label 
+                    Text="Barrio Escalante, Los Yoses" 
+                    XAlign="Center" YAlign="Start" 
+                    Style="{DynamicResource PostDetailHeaderUbicationStyle}"  
+                    VerticalOptions="Start" />
+            </StackLayout>
+            <local:FavoriteImage  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Grid.Row="1" Grid.Column="2"
+                                    Source="{Binding SelectedPost.IsFavorite, Converter={StaticResource IsFilledIconConverter}, ConverterParameter='heart'}">
+                <local:FavoriteImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FavoriteCommand}"/>
+                </local:FavoriteImage.GestureRecognizers>
+            </local:FavoriteImage>
+            <BoxView 
+                BackgroundColor="Gray" 
+                HeightRequest="{DynamicResource DividerHeigthSize}" 
+                VerticalOptions="FillAndExpand" 
+                Grid.Row="2" Grid.Column="1"/>
+            <Label 
+                Text="Abierto de 16:00 - 22:00" 
+                XAlign="Center" 
+                TextColor="Green" 
+                VerticalOptions="Center" 
+                Grid.Row="3" Grid.Column="1"/>
+            <BoxView 
+                BackgroundColor="Gray" 
+                HeightRequest="{DynamicResource DividerHeigthSize}" 
+                VerticalOptions="FillAndExpand" 
+                Grid.Row="4" Grid.Column="1"/>
+            <Label 
+                Text="In the mid-14th century the Ottomans started uniting Anatolia and created an empire encompassing much of Southeast Europe, West Asia and North Africa, becoming a." 
+                XAlign="Center" YAlign="Center" 
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                Grid.Row="5" Grid.Column="1"
+                Style="{DynamicResource PostDetailHeaderDetailStyle}"
+                />
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
