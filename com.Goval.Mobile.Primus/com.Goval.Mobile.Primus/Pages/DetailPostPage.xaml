@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="com.Goval.Mobile.Primus.Pages.DetailPostPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:LocalControls="clr-namespace:com.Goval.Mobile.Primus.Controls"
              xmlns:parallax="clr-namespace:DevsDNA.XFParallax;assembly=DevsDNA.XFParallax"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:localContentViews ="clr-namespace:com.Goval.Mobile.Primus.Controls.ContentViews;assembly=com.Goval.Mobile.Primus"
@@ -13,8 +15,8 @@
         <parallax:ParallaxView.HeaderContent>
             <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <StackLayout >
-                    <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" VerticalOptions="FillAndExpand"
-                                Source="{Binding SelectedPost.Media_Path}" ></ffimageloading:CachedImage>
+                    <Image HeightRequest="150" Aspect="Fill" VerticalOptions="FillAndExpand"
+                                Source="{Binding SelectedPost.Media_Path}" ></Image>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></BoxView>
                 </StackLayout>
             </ContentView>
@@ -26,8 +28,12 @@
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource PostDetailBackgroundColor}" Spacing="{DynamicResource SpacingBetweenComponents}">
                     <localContentViews:DetailPostHeader/>
                     <localContentViews:DetailPostInformation/>
+                    <!--LocalControls:ExtendedMap   WidthRequest="320" HeightRequest="200" MapType="Street">
+                       <x:Array Type="{x:Type maps:Pin}">
+                            <maps:Pin Label="La Vuelta" Address="Barrio Escalante" Position="{Binding PinLocation}"/>
+                       </>
+                    </LocalControls:ExtendedMap-->
 
-                    
 
                 </StackLayout>
 

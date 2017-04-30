@@ -16,7 +16,18 @@ namespace com.Goval.Mobile.Primus
         public MainPage()
         {
             InitializeComponent();
+            var list = this.FindByName<ListView>("LV");
+            list.ItemsSource = Items;
         }
+        public List<String> _items = new List<string> { "Lunes 18:00 - 22:00", "Martes 18:00 - 22:00", "Miercoles 18:00 - 22:00", "Jueves 18:00 - 22:00", "Viernes 18:00 - 22:00", "Sabado Cerrado", "Domingo 18:00 - 22:00" };
+        public List<String> Items {
+            get {
+                return _items;
+            }
+            set {
+                 _items = value;
+            }
+                }
         protected override void OnAppearing()
         {
             base.OnAppearing();

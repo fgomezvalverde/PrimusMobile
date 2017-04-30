@@ -49,7 +49,7 @@
     <Compile Include="Controls\ContentViews\DetailPostInformation.xaml.cs">
       <DependentUpon>DetailPostInformation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomMap.cs" />
+    <Compile Include="Controls\ExtendedMap.cs" />
     <Compile Include="Controls\FavoriteImage.cs" />
     <Compile Include="Controls\TappedViewCell.cs" />
     <Compile Include="Converters\ImageConverter.cs" />

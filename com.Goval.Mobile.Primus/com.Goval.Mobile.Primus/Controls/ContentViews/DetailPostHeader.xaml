@@ -38,7 +38,7 @@
                 Grid.Row="0" Grid.Column="1" 
                 Style="{DynamicResource PostDetailCalificationBoxStyle}"
                 Margin="{DynamicResource PostDetailCardBoxMargin}"/>
-            <StackLayout Grid.Row="1" Grid.Column="1" Spacing="0">
+            <StackLayout Grid.Row="1" Grid.Column="1" Spacing="0" HorizontalOptions="CenterAndExpand">
                 <Label 
                     Text="Pizzeria La Vuelta" 
                        VerticalOptions="CenterAndExpand" 

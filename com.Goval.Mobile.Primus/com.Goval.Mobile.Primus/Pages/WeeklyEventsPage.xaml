@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:com.Goval.Mobile.Primus.Controls;assembly=com.Goval.Mobile.Primus"
              x:Class="com.Goval.Mobile.Primus.Pages.WeeklyEventsPage">
     <StackLayout>
-        <ListView x:Name="WeeklyListView"  ItemsSource="{Binding WeeklyEvents}" SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
+        <ListView x:Name="WeeklyListView"  ItemsSource="{Binding WeeklyEvents}" SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorColor="Black">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

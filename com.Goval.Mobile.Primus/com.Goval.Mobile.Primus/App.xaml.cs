@@ -6,6 +6,7 @@ using System.Text;
 using com.Goval.Mobile.Primus.PageModels;
 using Xamarin.Forms;
 using com.Goval.Mobile.Primus.TESTTING;
+using Xamarin.Forms.Maps;
 
 namespace com.Goval.Mobile.Primus
 {
@@ -21,6 +22,23 @@ namespace com.Goval.Mobile.Primus
             //DataInitiliazerTest.AddCategoriesObjects();
             LoadTabbedNav();
             //MainPage = new MainPage();
+
+
+            /*var map = new Map(
+            MapSpan.FromCenterAndRadius(
+                    new Position(37, -122), Distance.FromMiles(0.3)))
+            {
+                IsShowingUser = true,
+                HeightRequest = 100,
+                WidthRequest = 960,
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
+            var stack = new StackLayout { Spacing = 0 };
+            stack.Children.Add(map);
+            ContentPage page = new ContentPage {  Content = stack};*/
+
+            //MainPage = page;
+
         }
 
         public void LoadTabbedNav()
@@ -31,6 +49,7 @@ namespace com.Goval.Mobile.Primus
                 tabbedNavigation.AddTab<WeeklyEventsPageModel>("WEEK", null, null);
                 tabbedNavigation.AddTab<CategoriesPageModel>("CATEGORIES", null, null);
                 tabbedNavigation.AddTab<ProfilePageModel>("PROFILE", null, null);
+                NavigationPage.SetHasNavigationBar(tabbedNavigation as BindableObject, false);
                 MainPage = tabbedNavigation;
             }
             catch (Exception)

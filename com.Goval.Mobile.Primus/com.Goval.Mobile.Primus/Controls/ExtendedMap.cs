@@ -7,7 +7,7 @@ using Xamarin.Forms.Maps;
 
 namespace com.Goval.Mobile.Primus.Controls
 {
-    class CustomMap : Map
+    public class ExtendedMap : Map
     {
         private IList<Pin> _staticPins;
         public IList<Pin> StaticPins
